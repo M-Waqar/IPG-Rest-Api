@@ -1,0 +1,58 @@
+﻿
+@{
+    ViewBag.Title = "Viewprocess3dSecureMethodNotification";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="col-9 pl-4">
+    <h3>@ViewBag.Operation Operation</h3>
+    <p class="endpoint">@ViewBag.Method @ViewBag.RequestUrl</p>
+    <h5 style="font-weight:bold">Payload</h5>
+    <pre>@ViewBag.Payload</pre>
+    <h5 style="font-weight:bold">Response</h5>
+    <pre>@ViewBag.Response</pre>
+</div>
+
+
+@Html.Raw(ViewBag.Response)
+@*<div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-md-6">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <h3 class="text-center">Enter Security Code</h3>
+                            <img class="img-responsive cc-img" src="http://www.prepbootstrap.com/Content/images/shared/misc/creditcardicons.png">
+                        </div>
+                    </div>
+                    @using (Html.BeginForm("SecurityCode", "Home", FormMethod.Post, new { @class = "form" }))
+                    {
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <div class="form-group">
+                                        <label>Enter Security Code</label>
+                                        <div class="input-group">
+                                            <input type="tel" id="securityCode" name="securityCode" class="form-control" placeholder="security Code" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel-footer">
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <button type="submit" class="btn btn-danger btn-lg btn-block">Process payment</button>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+    <style>
+        .cc-img {
+            margin: 0 auto;
+        }
+    </style>*@

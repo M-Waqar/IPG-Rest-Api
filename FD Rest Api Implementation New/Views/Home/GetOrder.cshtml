@@ -1,0 +1,58 @@
+﻿
+@{
+    ViewBag.Title = "GetOrder";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="jumbotron">
+    <h1>IPG REST API (Get Order)</h1>
+    <p class="lead">The home of all Fiserv Open APIs. Browse our catalogue and integrate with our APIs to enrich your clients' digital experiences.</p>
+    <p><a href="https://developer.firstdata.eu/apis/payment/payment" target="_blank" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <div class="row">
+                        <h3 class="text-center">Get Order</h3>
+                        <img class="img-responsive cc-img" src="http://www.prepbootstrap.com/Content/images/shared/misc/creditcardicons.png">
+                    </div>
+                </div>
+                @using (Html.BeginForm("RetriveOrder", "Home", FormMethod.Post, new { @class = "form" }))
+                {
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <div class="form-group">
+                                    <label>ORDER ID</label>
+                                    <div class="input-group">
+                                        <input type="tel" id="orderid" name="orderid" class="form-control" placeholder="Order ID" />
+                                        <span class="input-group-addon"><span class="fa fa-credit-card"></span></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="panel-footer">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <button type="submit" class="btn btn-danger btn-lg btn-block">Submit</button>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .cc-img {
+        margin: 0 auto;
+    }
+</style>
+
+

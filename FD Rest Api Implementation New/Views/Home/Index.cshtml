@@ -1,0 +1,109 @@
+﻿@{
+    ViewBag.Title = "IPG REST API";
+}
+
+<div class="jumbotron">
+    <h1>IPG REST API (Sale 3DS, N3DS)</h1>
+    <p class="lead">The home of all Fiserv Open APIs. Browse our catalogue and integrate with our APIs to enrich your clients' digital experiences.</p>
+    <p><a href="https://developer.firstdata.eu/apis/payment/payment" target="_blank" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <div class="row">
+                        <h3 class="text-center">Payment Details</h3>
+                        <img class="img-responsive cc-img" src="http://www.prepbootstrap.com/Content/images/shared/misc/creditcardicons.png">
+                    </div>
+                </div>
+                @using (Html.BeginForm("Sale", "Home", FormMethod.Post, new { @class = "form" }))
+                {
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-xs-7 col-md-7">
+                                <div class="form-group">
+                                    <label><span class="hidden-xs">AMOUNT</span></label>
+                                    <input type="number" id="total" name="total" value="100" class="form-control" placeholder="100.00" />
+                                </div>
+                            </div>
+                            <div class="col-xs-5 col-md-5 pull-right">
+                                <div class="form-group">
+                                    <label>CURRENCY</label>
+                                    <input type="text" id="currency" name="currency" class="form-control" value="BHD" placeholder="Currency" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <div class="form-group">
+                                    <label>CARD NUMBER</label>
+                                    <div class="input-group">
+                                        <input type="tel" id="cardnumber" value="4005520000000129" name="cardnumber" class="form-control" placeholder="Valid Card Number" />
+                                        <span class="input-group-addon"><span class="fa fa-credit-card"></span></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-4 col-md-4">
+                                <div class="form-group">
+                                    <label><span class="hidden-xs">EXPIRATION</span><span class="visible-xs-inline">EXP</span> MONTH</label>
+                                    <input type="tel" id="month" value="10" name="month" class="form-control" placeholder="MM" />
+                                </div>
+                            </div>
+                            <div class="col-xs-4 col-md-4">
+                                <div class="form-group">
+                                    <label><span class="hidden-xs">EXPIRATION</span><span class="visible-xs-inline">EXP</span> YEAR</label>
+                                    <input type="tel" id="year" value="25" name="year" class="form-control" placeholder="YY" />
+                                </div>
+                            </div>
+                            <div class="col-xs-4 col-md-4 pull-right">
+                                <div class="form-group">
+                                    <label>CV CODE</label>
+                                    <input type="tel" id="securityCode" value="002" name="securityCode" class="form-control" placeholder="CVC" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="form-group list-inline">
+                                <div class="col-xs-6">
+                                    <input type="radio" value="true" name="secure">
+                                    <label>3DS</label>
+                                </div>
+                                <div class="col-xs-6">
+                                    <input class="list-inline" type="radio" value="false" name="secure">
+                                    <label>Non 3DS</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <div class="form-group">
+                                    <label>CARD OWNER</label>
+                                    <input type="text" class="form-control" placeholder="Card Owner Names" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel-footer">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <button type="submit" class="btn btn-danger btn-lg btn-block">Process payment</button>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .cc-img {
+        margin: 0 auto;
+    }
+</style>
